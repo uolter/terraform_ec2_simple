@@ -1,6 +1,6 @@
 
 resource "aws_vpc" "foo-vpc" {
-  cidr_block = "10.0.0.0/24"
+  cidr_block = var.vpc_cidr_block
   enable_dns_hostnames = true
   enable_dns_support = true
   
@@ -14,7 +14,7 @@ resource "aws_vpc" "foo-vpc" {
 
 resource "aws_subnet" "subnet-1a" {
   cidr_block = "${cidrsubnet(aws_vpc.foo-vpc.cidr_block, 3, 1)}"
-  vpc_id = "${aws_vpc.foo-vpc.id}"
+  vpc_id = aws_vpc.foo-vpc.id
   availability_zone = "eu-west-1a"
 }
 
