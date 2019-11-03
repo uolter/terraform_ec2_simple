@@ -2,6 +2,15 @@
 
 - Code in the repository is compatible with terraform >= 0.12
 - You need to have configured properly the AWS Cli with valid access key and secret key.
+- Default profile is used:
+    ```
+        >> cat $HOME/.aws/credentials
+        
+        [default]
+        aws_access_key_id = AK****************XQ
+        aws_secret_access_key = cQ************************************Q2        
+    ```
+
 
 ```
 >> terraform init 
